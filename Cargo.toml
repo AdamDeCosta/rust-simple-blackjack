@@ -1,0 +1,9 @@
+[package]
+name = "simple_blackjack"
+version = "0.1.0"
+authors = ["Adam DeCosta <adam@decosta.io>"]
+edition = "2018"
+
+[dependencies]
+
+rand = "0.6.4"
