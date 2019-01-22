@@ -9,6 +9,7 @@ use std::io;
 // we must give a lifetime or they default to different lifetimes
 // without 'a it would default to Vec<&'a str>, Vec<&'b str>, thus not allowing
 // movement between the two collections as their lifetimes could end prematurely.
+// This function draws a card from the deck and puts it in the passed hand.
 fn draw_card<'a>(hand: &mut Vec<&'a str>, deck: &mut Vec<&'a str>) {
     let card = deck.pop(); // returns an optional.
     match card {
@@ -35,7 +36,7 @@ fn calculate_score(hand: &[&str]) -> i32 {
                     has_ace = true;
                     1
                 } else {
-                    // Must be a face card add 10
+                    // Must be a face card, so add 10
                     10
                 }
             }
@@ -130,7 +131,6 @@ fn main() {
 }
 
 // Unit Tests for calculate score
-
 #[cfg(test)]
 mod test {
     use super::*;
